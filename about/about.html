@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Jett Ngo's Biography</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Biography">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/main_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+        <style>
+            blockquote{
+                background-color: white;
+            }
+            .highlight{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>About Me</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Resume</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="../projects/projects.html">Projects</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <hr>
+            <!--Pic of me-->
+            <figure>
+                <picture>
+                    <source srcset="../static/images/Pic of me 800.jpg" media="(min-width: 800px)">
+                    <source srcset="../static/images/Pic of me 570.jpg" media="(min-width: 570px)">
+                    <img src="../static/images/pic of me hawaii 2024.jpg" alt="Picture of Jett Ngo">
+                </picture>
+                <figcaption>Picture of Jett Ngo</figcaption>
+            </figure>
+
+            <blockquote cite="https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says">
+                "The only way to do great work is to love what you do."
+                <footer>— <cite>Steve Jobs, <i>Stanford Commencement Address</i></cite></footer>
+            </blockquote>
+
+            <br>
+
+            <section id="bio">
+                <h2>Biography</h2>
+                <p class="montserrat-text">I am a <strong><span class="highlight">4th year Computer Engineering major</span></strong>, focusing more on software, rather than hardware. I was originally admitted to <abbr title="University of California San Diego">UCSD</abbr> as an Aerospace Engineering Major, but figured out at the end of my first year that I enjoyed programming much more than Aerospace Engineering. In particular, I enjoyed the iterative problem solving style of programming, as opposed to the more waterfall style used in Aerospace Engineering. The <dfn>waterfall approach</dfn> plans and accounts for everthing ahead of time before beginning programming and does not produce an <dfn>MVP</dfn>, which stands for Minimal Viable Product, until the product is completely finished. I plan to become a software engineer in the future and my immediate plans include getting a masters in Data Science and Machine Learning with ECE department's BS/MS program. I chose to get my masters in Data Science and Machine Learning as I enjoy learning about both and see machine learning becoming a key part of software engineering in the future.</p>
+            </section>
+            
+            <section id="skills">
+                <h3>Skills/Interests</h3>
+                <dl class="montserrat-text">
+                    <dt><em>Cooking</em></dt>
+                    <dd>I enjoy cooking all sorts of foods and experimenting with different cuisines.</dd>
+
+                    <dt><em>Web Dev</em></dt>
+                    <dd>I enjoy working on web dev projects, specifically connecting the backend to the frontend. Debugging can be a pain but it's very satisfying once everything is running correctly.
+                    </dd>
+                </dl>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 My Portfolio</p>
+            <p>Follow me on <a href="https://linkedin.com/in/myprofile" target="_blank">LinkedIn</a></p>
+        </footer>
+    </body>
+</html>
