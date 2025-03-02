@@ -154,11 +154,26 @@ figcaption {
         opacity: 1;
     }
 }
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 form {
     width: 100%;
     height: 100%;
     padding: 1rem;
     animation: fadeIn 2s ease-in-out;
+}
+
+form #errorActive {
+    animation: fadeOut 5s ease-out;
+    color: red;
 }
 
 table {
