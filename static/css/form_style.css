@@ -161,6 +161,21 @@ form {
     animation: fadeIn 2s ease-in-out;
 }
 
+input:user-invalid {
+    border: 2px solid red;
+  }
+
+input[pattern]:user-invalid + output::after {
+    content: "Input not valid. Please use only upper or lower case letters, apostrophes, hyphens, periods, and spaces.";
+    color: red;
+}
+
+
+.email:user-invalid + output::after {
+    content: "Email not valid. Please make sure you input the correct email.";
+    color: red;content: "Input not valid. Please use only upper or lower case letters, apostrophes, hyphens, periods, and spaces.";
+}
+
 table {
     width: 100%;
     table-layout: fixed;
