@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
-        <title>Jett Ngo's Contact</title>
+        <title>No-JS Form Page</title>
         <meta charset="UTF-8">
-        <meta name="description" content="Contact page">
+        <meta name="description" content="No JS Form Page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../static/css/main_style.css">
+        <link rel="stylesheet" href="../static/css/form_style.css">
     </head>
     <body>
 
         <header>
-            <h1>Contact</h1>
+            <h1>No JS Contact</h1>
             <nav>
                 <ul>
                     <li><a href="../index.html">Resume</a></li>
@@ -26,11 +26,6 @@
         <main class="contact-main">
             <hr>
             <h2>Contact Me:</h1>
-            <address>
-                <p>Email: <a href="mailto:jettnngo@gmail.com">jettnngo@gmail.com</a></p>
-                <p>LinkedIn: <a href="linkedin.com">linkedin.com</a></p>
-                <p>Github: <a href="https://github.com/JettN">https://github.com/JettN</a></p>
-            </address>
 
             <form action="https://httpbin.org/post" method="POST">
                 <fieldset>
@@ -39,14 +34,14 @@
                     <input type="hidden" name="possible_bot" value="true">
 
                     <label for="fname">First Name:</label>
-                    <input type="text" id="fname" name="fname" required>
+                    <input type="text" id="fname" name="fname" pattern="[A-Za-z' -.]+" minlength="1" maxlength="64" required>
                     <output id="fnameError" class="error"></output>
                     <output id="fnameInfo" class="info"></output>
                     <br>
                     <br>
                     
                     <label for="lname">Last Name:</label>
-                    <input type="text" id="lname" name="lname" required>
+                    <input type="text" id="lname" name="lname" pattern="[A-Za-z' -.]+" minlength="1" maxlength="64" required>
                     <output id="lnameError" class="error"></output>
                     <output id="lnameInfo" class="info"></output>
                     <br>
@@ -60,7 +55,7 @@
                     <br>
 
                     <label for="message">How can I help?</label>
-                    <textarea id="message" name="message" placeholder="Enter your message here..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Enter your message here..." maxlength="250" required></textarea>
                     <output id="messageError" class="error"></output>
                     <output id="messageInfo" class="info"></output>
                     <br>
