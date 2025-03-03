@@ -13,9 +13,9 @@ const messageInfo = document.getElementById("messageInfo");
 let form_errors = [];
 let maxChar = 250;
 
-fname.addEventListener("change", function() {checkRegX(fname, fnameError)});
-lname.addEventListener("change", function() {checkRegX(lname, lnameError)});
-email.addEventListener("change", function() {checkRegX(email, emailError)});
+fname.addEventListener("keydown", function(event) {checkRegX(fname, fnameError, event)});
+lname.addEventListener("keydown", function(event) {checkRegX(lname, lnameError, event)});
+email.addEventListener("keydown", function(event) {checkRegX(email, emailError. event)});
 message.addEventListener("change", function() {
     let remainingChars = maxChar - message.value.length;
     if (remainingChars < 50){
@@ -40,9 +40,9 @@ document.addEventListener("submit", function(){
     this.getElementById("form_errors").value = JSON.stringify(form_errors);
 });
 
-function checkRegX(field, errorField){
+function checkRegX(field, errorField, event){
     console.log(field.type)
-    if (field.checkValidity()){
+    if (!field.checkValidity() ){
         errorField.textContent = "";
         errorField.classList.remove('errorActive');
     } 
@@ -58,7 +58,7 @@ function checkRegX(field, errorField){
                 errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
             }
             else{
-                field.value = field.value.slice(0,-1);
+                event.preventDefault();
                 errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
             }
         } 
