@@ -23,7 +23,7 @@ button {
     display: inline;
     margin-top: 2rem;
     margin-right: 2rem;
-    position:absolute;
+    position:fixed;
     top:0;
     right:0;
 }
