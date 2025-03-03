@@ -59,7 +59,7 @@ function checkRegX(field, errorField, event){
             }
             else{
                 event.preventDefault();
-                field.textContent = field.textContent.slice(0, -1);
+                field.value = field.value.slice(0, -1);
                 errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
             }
         } 

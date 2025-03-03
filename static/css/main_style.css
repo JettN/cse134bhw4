@@ -187,8 +187,8 @@ input:user-invalid{
     border: red, 2px;
 }
 
-input {
-    border: black, 2px;
+input:user-valid {
+    border: inherit;
 }
 
 #messageInfo {
