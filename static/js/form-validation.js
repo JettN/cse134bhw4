@@ -16,7 +16,7 @@ email.addEventListener("input", function() {checkRegX(email, emailError)});
 
 function checkRegX(field, errorField){
     console.log(field.type)
-    if (field.validity.valid){
+    if (field.checkValidity()){
         errorField.textContent = "";
         errorField.classList.remove('errorActive');
     } 
@@ -27,7 +27,7 @@ function checkRegX(field, errorField){
         errorMessage = `This field is required.`;
         } 
         else if (field.validity.patternMismatch) {
-            if(field.type == "email"){
+            if(field.type == email.type){
                 errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
             }
             else{
