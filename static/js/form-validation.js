@@ -42,7 +42,7 @@ document.addEventListener("submit", function(){
 
 function checkRegX(field, errorField, event){
     console.log(field.type)
-    if (!field.checkValidity() ){
+    if (field.checkValidity() ){
         errorField.textContent = "";
         errorField.classList.remove('errorActive');
     } 
