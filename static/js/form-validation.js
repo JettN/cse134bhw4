@@ -13,10 +13,10 @@ const messageInfo = document.getElementById("messageInfo");
 let form_errors = [];
 let maxChar = 250;
 
-fname.addEventListener("input", function() {checkRegX(fname, fnameError)});
-lname.addEventListener("input", function() {checkRegX(lname, lnameError)});
-email.addEventListener("input", function() {checkRegX(email, emailError)});
-message.addEventListener("input", function() {
+fname.addEventListener("change", function() {checkRegX(fname, fnameError)});
+lname.addEventListener("change", function() {checkRegX(lname, lnameError)});
+email.addEventListener("change", function() {checkRegX(email, emailError)});
+message.addEventListener("change", function() {
     let remainingChars = maxChar - message.value.length;
     if (remainingChars < 50){
         messageInfo.classList.add('nearLimit');
@@ -48,7 +48,8 @@ function checkRegX(field, errorField){
     } 
     else {
         let errorMessage = 'Input not valid.';
-    
+        const regex = /^[A-Za-z0-9-_\.]*$/;
+
         if (field.validity.valueMissing) {
         errorMessage = `This field is required.`;
         } 
@@ -57,6 +58,7 @@ function checkRegX(field, errorField){
                 errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
             }
             else{
+                field.value = field.value.slice(0,-1);
                 errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
             }
         } 
