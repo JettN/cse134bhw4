@@ -18,6 +18,13 @@ lname.addEventListener("input", function() {checkRegX(lname, lnameError)});
 email.addEventListener("input", function() {checkRegX(email, emailError)});
 message.addEventListener("input", function() {
     let remainingChars = maxChar - message.value.length;
+    if (remainingChars < 50){
+        messageInfo.classList.add('nearLimit');
+    }
+    else {
+        messageInfo.classList.remove('nearLimit')
+    }
+    
     messageInfo.textContent = `${remainingChars} characters remaining`
 });
 
