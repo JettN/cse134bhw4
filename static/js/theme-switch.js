@@ -1,6 +1,6 @@
 const btn = document.getElementById("themeSwitch");
 const body = document.body;
-const icon = document.getElementsByClassName("icon")
+const icon = document.querySelector(".icon")
 
 let currTheme = localStorage.getItem("theme");
 
@@ -15,6 +15,7 @@ else if(currTheme === "dark"){
 }
 else {
     body.classList.remove('dark-mode');
+    icon.textContent = "🌞";
     btn.checked = false;
 }
 
