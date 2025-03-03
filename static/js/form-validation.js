@@ -24,8 +24,20 @@ message.addEventListener("input", function() {
     else {
         messageInfo.classList.remove('nearLimit')
     }
-    
-    messageInfo.textContent = `${remainingChars} characters remaining`
+
+    if(remainingChars == 0){
+        form_errors.push({
+            field: message.name,
+            value: message.value,
+            error: "Max character limit reached"
+        });
+    }
+
+    messageInfo.textContent = `${remainingChars} characters remaining`;
+});
+
+document.addEventListener("submit", function(){
+    this.getElementById("form_errors").value = form_errors;
 });
 
 function checkRegX(field, errorField){
