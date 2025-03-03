@@ -15,7 +15,38 @@ let maxChar = 250;
 
 fname.addEventListener("keydown", function(event) {checkRegX(fname, fnameError, event)});
 lname.addEventListener("keydown", function(event) {checkRegX(lname, lnameError, event)});
-email.addEventListener("keydown", function(event) {checkRegX(email, emailError. event)});
+
+email.addEventListener("keydown", function(event) { 
+    if (email.checkValidity()){
+        errorField.textContent = "";
+        errorField.classList.remove('errorActive');
+    } 
+    else {
+        let errorMessage = 'Input not valid.';
+        //const regex = /^[A-Za-z0-9-_\.]*$/;
+
+        if (field.validity.valueMissing) {
+        errorMessage = `This field is required.`;
+        } 
+        else if (field.validity.patternMismatch) {
+            errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
+        } 
+
+        errorField.textContent=errorMessage;
+        errorField.classList.add('errorActive');
+        form_errors.push({
+            field: field.name,
+            value: field.value,
+            error: errorMessage
+        });
+
+        setTimeout(function(){
+            errorField.classList.remove('errorActive');
+            errorField.textContent = "";
+        }, 8000);
+    }
+});
+
 message.addEventListener("change", function() {
     let remainingChars = maxChar - message.value.length;
     if (remainingChars < 50){
@@ -40,9 +71,28 @@ document.addEventListener("submit", function(){
     this.getElementById("form_errors").value = JSON.stringify(form_errors);
 });
 
+const allowedKeys = ['ArrowUp', 'ArrowDown', 'Backspace', 'Delete'];
+
 function checkRegX(field, errorField, event){
-    console.log(field.type)
-    if (field.checkValidity() ){
+    if(!event.key.match(/^[A-Za-z' -.]*$/) && !allowedKeys.includes(event.key)){
+        event.preventDefault()
+
+        let errorMessage = `Invalid character used. Retype your input. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
+
+        errorField.textContent=errorMessage;
+        errorField.classList.add('errorActive');
+        form_errors.push({
+            field: field.name,
+            value: field.value,
+            error: errorMessage
+        });
+
+        setTimeout(function(){
+            errorField.classList.remove('errorActive');
+            errorField.textContent = "";
+        }, 8000);
+    }
+    else if (field.checkValidity() ){
         errorField.textContent = "";
         errorField.classList.remove('errorActive');
     } 
@@ -53,25 +103,15 @@ function checkRegX(field, errorField, event){
         if (field.validity.valueMissing) {
         errorMessage = `This field is required.`;
         } 
-        else if (field.validity.patternMismatch) {
-            if(field.type == email.type){
-                errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
-            }
-            else{
-                //event.preventDefault();
-                //field.value = field.value.slice(0, -1);
-                errorMessage = `Invalid character used. Retype your input. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
-            }
-        } 
         else if (field.validity.tooLong) {
-        errorMessage = `Input is too short. Max number of character allowed is ${field.maxlength}.`;
+            errorMessage = `Input is too short. Max number of character allowed is ${field.maxlength}.`;
         }
 
         errorField.textContent=errorMessage;
         errorField.classList.add('errorActive');
         form_errors.push({
             field: field.name,
-            value: field.value,
+            key_pressed: event.key,
             error: errorMessage
         });
 
