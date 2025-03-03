@@ -58,7 +58,7 @@ function checkRegX(field, errorField, event){
                 errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
             }
             else{
-                //event.preventDefault();
+                field.textContent.replace(/^[A-Za-z0-9-_\.]*$/, "");
                 errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
             }
         } 
