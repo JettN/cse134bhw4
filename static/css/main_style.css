@@ -34,7 +34,7 @@ button {
     transition: opacity 0.3s ease;
 }
 
-html.dark-mode, body.dark-mode {
+html.dark-mode, body.dark-mode, body.dark-mode blockquote {
     background-color: var(--background-dark);
     color: var(--text-dark);
 }
@@ -101,10 +101,18 @@ nav ul li {
     --hover-text-color: color(display-p3 1 0 0.331);
     --hover-background-color: color-mix(in display-p3, purple 70%, blue 30%);
     --normal-nav-color: color(display-p3 0.331 0 1);
+
+    --dark-mode-nav-color: rgb(111, 183, 216);
 }
 nav ul li a {
     text-decoration: none;
     color: var(--normal-nav-color, #0000FF);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.dark-mode nav ul li a {
+    text-decoration: none;
+    color: var(--dark-mode-nav-color, #0000FF);
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
