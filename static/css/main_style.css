@@ -1,3 +1,12 @@
+:root {
+    --background-light: #ffffff;
+    --background-dark: #121212;
+    --text-light: #000000;
+    --text-dark: #ffffff;
+    --button-light: #f0f0f0;
+    --button-dark: #333333;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -5,6 +14,37 @@ html, body {
     height: 100%;
     min-width: 100 dvw;
     overflow-x: hidden;
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+input[type="checkbox"]{
+    background-color: var(--button-light);
+    display:none;
+}
+
+.theme-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+}
+
+.sun, .moon {
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
+}
+
+html.dark-mode, body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode .sun {
+    opacity: 0; /* Hide sun icon in dark mode */
+}
+
+body.dark-mode .moon {
+    opacity: 1; /* Show moon icon in dark mode */
 }
 
 body {
