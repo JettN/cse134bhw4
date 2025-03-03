@@ -25,11 +25,11 @@ function checkRegX(field, errorField){
         if (field.validity.valueMissing) {
         errorMessage = `This field is required.`;
         } else if (field.validity.patternMismatch) {
-            if(field.type === "email"){
+            if(field.id === "email"){
                 errorMessage = `Email invalid. Please match the following format: "example@example.com".`
             }
             else{
-                errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, periods, and spaces.`;
+                errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
             }
         } else if (field.validity.tooLong) {
         errorMessage = `Input is too short. Max number of character allowed is ${field.maxlength}.`;
