@@ -12,6 +12,7 @@ let form_errors = []
 
 fname.addEventListener("input", function() {checkRegX(fname, fnameError)});
 lname.addEventListener("input", function() {checkRegX(lname, lnameError)});
+email.addEventListener("input", function() {checkRegX(email, emailError)});
 
 function checkRegX(field, errorField){
     if (field.validity.valid){
@@ -24,7 +25,12 @@ function checkRegX(field, errorField){
         if (field.validity.valueMissing) {
         errorMessage = `This field is required.`;
         } else if (field.validity.patternMismatch) {
-        errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, periods, and spaces.`;
+            if(field.type === "email"){
+                errorMessage = `Email invalid. Please match the following format: "example@example.com".`
+            }
+            else{
+                errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, periods, and spaces.`;
+            }
         } else if (field.validity.tooLong) {
         errorMessage = `Input is too short. Max number of character allowed is ${field.maxlength}.`;
         }
