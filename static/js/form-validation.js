@@ -36,5 +36,6 @@ function checkRegX(field, errorField){
             value: field.value,
             error: errorMessage
         });
+        
     }
 }
