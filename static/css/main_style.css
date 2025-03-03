@@ -178,7 +178,7 @@ form {
 
 .errorActive {
     display: block;
-    animation: fadeOut 2s ease-out;
+    animation: fadeOut 2s ease-in-out;
     color: red;
     animation-delay: 3s;
 }

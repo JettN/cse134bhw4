@@ -16,7 +16,7 @@ lname.addEventListener("input", function() {checkRegX(lname, lnameError)});
 function checkRegX(field, errorField){
     if (field.validity.valid){
         errorField.textContent = "";
-        errorField.className = "error";
+        errorField.classList.remove('errorActive');
     } 
     else {
         let errorMessage = 'Input not valid.';
@@ -30,12 +30,16 @@ function checkRegX(field, errorField){
         }
 
         errorField.textContent=errorMessage;
-        errorField.className = "errorActive";
+        errorField.classList.add('errorActive');
         form_errors.push({
             field: field.name,
             value: field.value,
             error: errorMessage
         });
-        
+
+        setTimeout(function(){
+            errorField.classList.remove('errorActive');
+            errorField.textContent = "";
+        }, 8000);
     }
 }
