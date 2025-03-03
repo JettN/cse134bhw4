@@ -247,6 +247,7 @@ input:user-valid {
 
 body.dark-mode .nearLimit {
     background-color: var(--background-dark);
+    color: red;
 }
 
 .centerStuff {
