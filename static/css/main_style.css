@@ -245,6 +245,10 @@ input:user-valid {
     font-weight: bolder;
 }
 
+body.dark-mode .nearLimit {
+    background-color: var(--background-dark);
+}
+
 .centerStuff {
     display: inline-flex;
     flex-direction: column;
