@@ -1,5 +1,6 @@
 const btn = document.getElementById("themeSwitch");
 const body = document.body;
+const icon = document.getElementsByClassName("icon")
 
 let currTheme = localStorage.getItem("theme");
 
@@ -9,6 +10,7 @@ if(currTheme === null){
 }
 else if(currTheme === "dark"){
     body.classList.add('dark-mode');
+    icon.innerText = "🌙";
     btn.checked = true;
 }
 else {
@@ -22,10 +24,12 @@ btn.addEventListener("click", () =>{
     if (currTheme === 'light') {
         body.classList.add('dark-mode');
         btn.checked = true;
+        icon.innerText = "🌙";
         localStorage.setItem('theme', 'dark');
     } else {
         body.classList.remove('dark-mode');
         btn.checked = false;
+        icon.innerText = "🌞";
         localStorage.setItem('theme', 'light');
     }
 
