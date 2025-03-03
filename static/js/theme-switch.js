@@ -10,7 +10,7 @@ if(currTheme === null){
 }
 else if(currTheme === "dark"){
     body.classList.add('dark-mode');
-    icon.innerText = "🌙";
+    icon.textContent = "🌙";
     btn.checked = true;
 }
 else {
@@ -24,12 +24,12 @@ btn.addEventListener("click", () =>{
     if (currTheme === 'light') {
         body.classList.add('dark-mode');
         btn.checked = true;
-        icon.innerText = "🌙";
+        icon.textContent = "🌙";
         localStorage.setItem('theme', 'dark');
     } else {
         body.classList.remove('dark-mode');
         btn.checked = false;
-        icon.innerText = "🌞";
+        icon.textContent = "🌞";
         localStorage.setItem('theme', 'light');
     }
 
