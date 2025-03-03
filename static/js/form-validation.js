@@ -27,7 +27,7 @@ function checkRegX(field, errorField){
         errorMessage = `This field is required.`;
         } 
         else if (field.validity.patternMismatch) {
-            if(email.type == "email"){
+            if(field.type == "email"){
                 errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
             }
             else{
