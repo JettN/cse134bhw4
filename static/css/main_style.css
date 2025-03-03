@@ -188,7 +188,13 @@ input:user-invalid{
 }
 
 #messageInfo {
-    font-size: 50%;
+    font-size: 70%;
+}
+
+.nearLimit {
+    color: red;
+    font-size: 90%;
+    font-weight: bolder;
 }
 
 .centerStuff {
