@@ -37,7 +37,7 @@ message.addEventListener("input", function() {
 });
 
 document.addEventListener("submit", function(){
-    this.getElementById("form_errors").value = form_errors;
+    this.getElementById("form_errors").value = JSON.stringify(form_errors);
 });
 
 function checkRegX(field, errorField){
