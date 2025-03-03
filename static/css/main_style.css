@@ -171,12 +171,12 @@ form {
     animation: fadeIn 2s ease-in-out;
 }
 
-#error {
+.error {
     display: block;
     color: red
 }
 
-#errorActive {
+.errorActive {
     display: block;
     animation: fadeOut 5s ease-out;
     color: red;
