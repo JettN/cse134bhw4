@@ -171,7 +171,11 @@ form {
     animation: fadeIn 2s ease-in-out;
 }
 
-form #errorActive {
+#error {
+    color: red
+}
+
+#errorActive {
     animation: fadeOut 5s ease-out;
     color: red;
 }
