@@ -54,7 +54,7 @@
                     <br>
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._-]{1,}@[a-zA-Z.-]{1,}\.[a-zA-Z]{2,}" required>
+                    <input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
                     <output id="emailError" class="error"></output>
                     <output id="emailInfo" class="info"></output>
                     <br>

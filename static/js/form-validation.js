@@ -8,11 +8,15 @@ const lnameError = document.getElementById("lnameError");
 const emailError = document.getElementById("emailError");
 const messageError = document.getElementById("messageError");
 
-let form_errors = []
+let form_errors = [];
+let maxChar = 250;
 
 fname.addEventListener("input", function() {checkRegX(fname, fnameError)});
 lname.addEventListener("input", function() {checkRegX(lname, lnameError)});
 email.addEventListener("input", function() {checkRegX(email, emailError)});
+message.addEventListener("input", function() {
+
+})
 
 function checkRegX(field, errorField){
     console.log(field.type)
