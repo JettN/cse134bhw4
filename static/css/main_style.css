@@ -20,6 +20,12 @@ html, body {
 
 button {
     background-color: var(--button-light);
+    display: inline;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    position:absolute;
+    top:0;
+    right:0;
 }
 
 
