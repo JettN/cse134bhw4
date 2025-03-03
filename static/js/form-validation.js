@@ -17,11 +17,8 @@ fname.addEventListener("keydown", function(event) {checkRegX(fname, fnameError, 
 lname.addEventListener("keydown", function(event) {checkRegX(lname, lnameError, event)});
 
 email.addEventListener("keydown", function(event) { 
-    if (email.checkValidity()){
-        errorField.textContent = "";
-        errorField.classList.remove('errorActive');
-    } 
-    else {
+    if (!email.checkValidity()){
+
         let errorMessage = 'Input not valid.';
         //const regex = /^[A-Za-z0-9-_\.]*$/;
 
@@ -44,10 +41,14 @@ email.addEventListener("keydown", function(event) {
             errorField.classList.remove('errorActive');
             errorField.textContent = "";
         }, 8000);
+    } 
+    else {
+        errorField.textContent = "";
+        errorField.classList.remove('errorActive');
     }
 });
 
-message.addEventListener("change", function() {
+message.addEventListener("keydown", function() {
     let remainingChars = maxChar - message.value.length;
     if (remainingChars < 50){
         messageInfo.classList.add('nearLimit');
