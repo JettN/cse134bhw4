@@ -48,7 +48,7 @@ function checkRegX(field, errorField, event){
     } 
     else {
         let errorMessage = 'Input not valid.';
-        const regex = /^[A-Za-z0-9-_\.]*$/;
+        //const regex = /^[A-Za-z0-9-_\.]*$/;
 
         if (field.validity.valueMissing) {
         errorMessage = `This field is required.`;
@@ -58,9 +58,9 @@ function checkRegX(field, errorField, event){
                 errorMessage = `Email invalid. Please match the following format: "example@example.com"`;
             }
             else{
-                event.preventDefault();
-                field.value = field.value.slice(0, -1);
-                errorMessage = `This field must match the correct pattern. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
+                //event.preventDefault();
+                //field.value = field.value.slice(0, -1);
+                errorMessage = `Invalid character used. Retype your input. Please use only upper or lower case letters, apostrophes, hyphens, and spaces.`;
             }
         } 
         else if (field.validity.tooLong) {
