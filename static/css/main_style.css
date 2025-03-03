@@ -172,10 +172,12 @@ form {
 }
 
 #error {
+    display: block;
     color: red
 }
 
 #errorActive {
+    display: block;
     animation: fadeOut 5s ease-out;
     color: red;
 }
